@@ -1,0 +1,31 @@
+:root{--bg:#0b1220;--fg:#e5e7eb;--muted:#9ca3af;--card:#0f172a;--border:#1f2937;--accent:#22c55e}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif}
+.container{max-width:1200px;margin:0 auto;padding:1.25rem}
+.header{background:linear-gradient(90deg,#0f172a,#0b1220);border-bottom:1px solid var(--border)}
+.title{font-size:1.75rem;margin:0}
+.subtitle{margin:.25rem 0 0;color:var(--muted)}
+.layout{display:grid;grid-template-columns:320px 1fr;gap:1rem}
+@media (max-width: 900px){.layout{grid-template-columns:1fr}.sidebar{order:2}}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:.75rem;padding:1rem}
+.panel-title{font-weight:700;margin-bottom:.75rem}
+.list{display:flex;flex-direction:column;gap:.5rem}
+.item{padding:.5rem .6rem;border-radius:.6rem;border:1px solid var(--border);background:rgba(255,255,255,.02);cursor:pointer}
+.item:hover{border-color:#334155}
+.item.active{border-color:var(--accent)}
+.muted{color:var(--muted)}
+.toolbar{display:flex;gap:.5rem;align-items:center;margin-bottom:1rem}
+.input{flex:1;border:1px solid var(--border);border-radius:.6rem;background:rgba(0,0,0,.25);color:var(--fg);padding:.55rem .7rem}
+.button{border:1px solid var(--border);border-radius:.6rem;background:rgba(34,197,94,.15);color:var(--fg);padding:.55rem .8rem;cursor:pointer}
+.button:hover{background:rgba(34,197,94,.22)}
+.viewer h2{margin:.2rem 0 .75rem}
+.viewer pre{white-space:pre-wrap;word-break:break-word;background:rgba(0,0,0,.25);border:1px solid var(--border);border-radius:.6rem;padding:1rem;overflow:auto}
+.header-row{display:flex;align-items:center;justify-content:space-between;gap:.75rem}
+.header-text{min-width:0}
+.icon-btn{border:1px solid var(--border);border-radius:.6rem;background:rgba(255,255,255,.02);color:var(--fg);padding:.45rem .6rem;cursor:pointer}
+.icon-btn:hover{border-color:#334155}
+.sidebar{position:relative}
+@media (max-width: 900px){
+  .sidebar{position:fixed;left:0;top:0;height:100%;width:85%;max-width:360px;transform:translateX(-110%);transition:transform .2s ease;background:var(--bg);padding:1rem;z-index:50}
+  .sidebar.open{transform:translateX(0)}
+}
