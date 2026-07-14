@@ -1,4 +1,4 @@
-import { DOC_CONFIG } from "./config.js"
+import { DOC_CONFIG } from "./config.js?v=20260714a"
 
 let __cache = new Map()
 

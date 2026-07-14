@@ -1,6 +1,6 @@
-import { DOC_CONFIG } from "./config.js"
-import { verifyConnection, getAll, getSpacePages, getPageBySlug, searchDocs } from "./api.js"
-import { renderMarkdown } from "./renderer.js"
+import { DOC_CONFIG } from "./config.js?v=20260714a"
+import { verifyConnection, getAll, getSpacePages, getPageBySlug, searchDocs } from "./api.js?v=20260714a"
+import { renderMarkdown } from "./renderer.js?v=20260714a"
 
 let state = {
   spaces: [],
