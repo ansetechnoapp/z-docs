@@ -1,42 +1,20 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" class="dark">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Documentation</title>
-  <link rel="stylesheet" href="css/style.css?v=20260714a">
-  <link rel="stylesheet" href="css/markdown.css?v=20260714a">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="ZodBack Docs, une interface de documentation inspirée des maquettes NeuralAPI.">
+  <title>ZodBack Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,0..1,0..200" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260730c">
+  <link rel="stylesheet" href="css/markdown.css?v=20260730c">
 </head>
 <body>
-  <header class="header">
-    <div class="container">
-      <div class="header-row">
-        <button id="sidebar-toggle" class="icon-btn" aria-label="Sidebar">☰</button>
-        <div class="header-text">
-          <h1 id="site-title" class="title">Documentation</h1>
-          <p class="subtitle">Spaces • Pages • Recherche</p>
-        </div>
-        <button id="theme-toggle" class="icon-btn" aria-label="Theme">🌙</button>
-      </div>
-    </div>
-  </header>
-
-  <main class="container layout">
-    <aside id="sidebar" class="sidebar">
-      <div class="panel">
-        <div class="panel-title">Navigation</div>
-        <input id="search-input" class="input" placeholder="Rechercher..." />
-        <div id="sidebar-nav" class="list"></div>
-      </div>
-    </aside>
-
-    <section class="content">
-      <div class="panel">
-        <div id="content" class="viewer"></div>
-      </div>
-    </section>
-  </main>
-
-  <script type="module" src="js/app.js?v=20260714a"></script>
+  <div id="app"></div>
+  <script type="module" src="js/app.js?v=20260730c"></script>
 </body>
 </html>

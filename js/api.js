@@ -1,4 +1,4 @@
-import { DOC_CONFIG } from "./config.js?v=20260714a"
+import { DOC_CONFIG } from "./config.js?v=20260730c"
 
 let __cache = new Map()
 
@@ -40,33 +40,37 @@ async function request(path, params) {
   return json
 }
 
-export async function getAll() {
-  const params = DOC_CONFIG.PROJECT_ID ? { projectId: DOC_CONFIG.PROJECT_ID } : undefined
+export async function getAll(projectId = DOC_CONFIG.PROJECT_ID) {
+  const params = projectId ? { projectId } : undefined
   return request("all", params)
 }
 
-export async function getSpacePages(spaceSlug) {
-  const params = DOC_CONFIG.PROJECT_ID ? { projectId: DOC_CONFIG.PROJECT_ID } : undefined
+export async function getProjectBySlug(slug) {
+  return request(`project/${encodeURIComponent(slug)}`)
+}
+
+export async function getSpacePages(spaceSlug, projectId = DOC_CONFIG.PROJECT_ID) {
+  const params = projectId ? { projectId } : undefined
   return request(`spaces/${encodeURIComponent(spaceSlug)}/pages`, params)
 }
 
-export async function getPageBySlug(slug) {
-  const params = DOC_CONFIG.PROJECT_ID ? { projectId: DOC_CONFIG.PROJECT_ID } : undefined
+export async function getPageBySlug(slug, projectId = DOC_CONFIG.PROJECT_ID) {
+  const params = projectId ? { projectId } : undefined
   return request(`pages/${encodeURIComponent(slug)}`, params)
 }
 
-export async function searchDocs(q, spaceId) {
+export async function searchDocs(q, projectId = DOC_CONFIG.PROJECT_ID, spaceId) {
   const params = {
     q,
-    projectId: DOC_CONFIG.PROJECT_ID || undefined,
+    projectId: projectId || undefined,
     spaceId: spaceId || undefined,
   }
   return request("search", params)
 }
 
-export async function verifyConnection() {
+export async function verifyConnection(projectId = DOC_CONFIG.PROJECT_ID) {
   try {
-    await getAll()
+    await getAll(projectId)
     return true
   } catch {
     return false
